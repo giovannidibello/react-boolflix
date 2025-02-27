@@ -14,11 +14,15 @@ export default function MoviesList() {
 
     return (
         <>
-            {
-                movies.map((movie) => (
-                    <MovieCard key={movie.id} movie={movie} />
-                ))
-            }
+            <div className="movieContainerCard">
+
+                {
+                    movies.map((movie) => (
+
+                        <MovieCard key={movie.id} movie={movie} />
+                    ))
+                }
+            </div>
         </>
     );
 }

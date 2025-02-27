@@ -1,0 +1,15 @@
+/* card movies */
+
+.movieContainerCard {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+
+.movieCard {
+  width: 20%;
+  border: 1px solid gray;
+  margin: 10px 0;
+  padding: 10px;
+}

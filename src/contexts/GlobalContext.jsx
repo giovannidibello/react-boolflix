@@ -1,5 +1,10 @@
+// GlobalContext.jsx
+
 import { createContext } from "react";
 
-const GlobalContext = createContext();
+const GlobalContext = createContext({
+    movies: [],
+    fetchData: () => { }
+});
 
 export default GlobalContext;
