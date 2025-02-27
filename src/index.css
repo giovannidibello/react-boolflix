@@ -33,6 +33,8 @@ header h1 {
 
 .movieCard {
   width: 20%;
+  height: 400px;
+  overflow: hidden;
   border: 1px solid gray;
   margin: 10px 0;
   padding: 10px;
@@ -40,6 +42,7 @@ header h1 {
 
 .posterImg {
   width: 100%;
+  height: 100%;
 }
 
 .movieTextCard {
