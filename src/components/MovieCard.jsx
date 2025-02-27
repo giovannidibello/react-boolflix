@@ -7,16 +7,19 @@ export default function MovieCard(props) {
     // destructuring dell'oggetto props
     const { movie } = props;
 
+    // gestione lingua con bandierine    
+    const defaultFlag = "/flags/00.png";
+
 
     return (
         <>
             {
 
                 <div className='movieCard' key={movie.id}>
-                    <h1>{movie.title}</h1>
-                    <h2>{movie.original_title}</h2>
-                    <h2>{movie.original_language}</h2>
-                    <h2>{movie.vote_average}</h2>
+                    <h1>Titolo: {movie.title}</h1>
+                    <h2>Titolo originale: {movie.original_title}</h2>
+                    <img src={`/flags/${movie.original_language}.png`} alt="{movie.original_language}" onError={(e) => e.target.src = defaultFlag} />
+                    <h2>Voto: {movie.vote_average}</h2>
                 </div >
 
             }
