@@ -1,6 +1,8 @@
 // MoviesCard.jsx
 
-// import { Link } from "react-router-dom";
+// importo fontawesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 export default function MovieCard({ movie, tvSerie }) {
 
@@ -9,6 +11,34 @@ export default function MovieCard({ movie, tvSerie }) {
 
     // gestione lingua con bandierine    
     const defaultFlag = "/flags/00.png";
+
+    // funzione per mostrare le stelle in base al voto
+    const renderStars = (vote) => {
+        const numOfStars = Math.ceil(vote / 2);
+        let stars = [];
+
+        for (let i = 0; i < 5; i++) {
+            if (i < numOfStars) {
+                stars.push(
+                    <FontAwesomeIcon
+                        key={i}
+                        icon={faStar}
+                        style={{ color: "#FFD43B" }}
+                    />
+                );
+            } else {
+                stars.push(
+                    <FontAwesomeIcon
+                        key={i}
+                        icon={faStar}
+                        style={{ color: "#ccc" }}
+                    />
+                );
+            }
+        }
+
+        return stars;
+    };
 
 
     return (
@@ -23,7 +53,9 @@ export default function MovieCard({ movie, tvSerie }) {
                         alt={movie.original_language}
                         onError={(e) => e.target.src = defaultFlag}
                     />
-                    <h2>Voto: {movie.vote_average}</h2>
+                    <div className="stars">
+                        {renderStars(movie.vote_average)}
+                    </div>
                 </div>
             )}
 
@@ -37,7 +69,9 @@ export default function MovieCard({ movie, tvSerie }) {
                         alt={tvSerie.original_language}
                         onError={(e) => e.target.src = defaultFlag}
                     />
-                    <h2>Voto: {tvSerie.vote_average}</h2>
+                    <div className="stars">
+                        {renderStars(tvSerie.vote_average)}
+                    </div>
                 </div>
             )}
         </>
