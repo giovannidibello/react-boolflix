@@ -21,6 +21,7 @@ function App() {
 
   //  settaggio dello stato del componente
   const [movies, setMovies] = useState([]);
+  const [tvSeries, setTvSeries] = useState([]);
 
   // salvataggio key dell'api  
   const api_key = "662c34639a2badff1ad7cf4b1b7299b6";
@@ -40,6 +41,20 @@ function App() {
 
       .catch((err) => console.error("Errore:", err));
 
+    // seconda chiamata all'API per ricerca serie tv
+    axios.get("https://api.themoviedb.org/3/search/tv", {
+      params: {
+        api_key: api_key,
+        query: query
+      }
+    })
+      .then((res) =>
+        setTvSeries(res.data.results)
+      )
+
+
+      .catch((err) => console.error("Errore:", err));
+
   }
 
 
@@ -49,7 +64,7 @@ function App() {
 
   return (
     <>
-      <GlobalContext.Provider value={{ movies, fetchData }}>
+      <GlobalContext.Provider value={{ movies, tvSeries, fetchData }}>
         <BrowserRouter>
           <Routes>
             <Route element={<DefaultLayout />} >
