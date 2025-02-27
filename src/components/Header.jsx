@@ -27,6 +27,7 @@ export default function Header() {
 
     return (
         <header>
+            <h1>BOOLFLIX</h1>
             <form id='formpost' onSubmit={handleSubmit}>
                 {/* campo di ricerca */}
                 <input
@@ -34,10 +35,9 @@ export default function Header() {
                     name="cerca"
                     value={formData.cerca}
                     onChange={handleFormData}
-                    placeholder='Cerca'
+                    placeholder='Cerca...'
                 />
-                {/* bottone di invio ricerca */}
-                <button>Cerca</button>
+
             </form>
         </header>
     );

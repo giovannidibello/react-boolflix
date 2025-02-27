@@ -1,3 +1,27 @@
+body {
+  background-color: darkgray;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  background-color: black;
+}
+
+header h1 {
+  color: red;
+}
+
+#formpost {
+  align-content: center;
+}
+
 /* card movies */
 
 .movieContainerCard {
@@ -12,4 +36,24 @@
   border: 1px solid gray;
   margin: 10px 0;
   padding: 10px;
+}
+
+.posterImg {
+  width: 100%;
+}
+
+.movieTextCard {
+  display: none;
+}
+
+.movieCard:hover .movieTextCard {
+  display: block;
+}
+
+.movieCard:hover .posterImg {
+  display: none;
+}
+
+.category {
+  text-align: center;
 }

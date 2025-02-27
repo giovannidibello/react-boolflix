@@ -14,7 +14,7 @@ export default function MoviesList() {
 
     return (
         <>
-            <h1>Film</h1>
+            {movies.length > 0 && <h1 className="category">Film</h1>}
             <div className="movieContainerCard">
 
                 {
@@ -25,7 +25,7 @@ export default function MoviesList() {
                 }
             </div>
 
-            <h1>Serie TV</h1>
+            {tvSeries.length > 0 && <h1 className="category">Serie TV</h1>}
             <div className="movieContainerCard">
 
                 {
