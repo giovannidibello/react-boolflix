@@ -15,6 +15,7 @@ export default function MovieCard({ movie, tvSerie }) {
         <>
             {movie && (
                 <div className='movieCard' key={movie.id}>
+                    <img src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`} alt={movie.title} />
                     <h1>Titolo: {movie.title}</h1>
                     <h2>Titolo originale: {movie.original_title}</h2>
                     <img
@@ -28,6 +29,7 @@ export default function MovieCard({ movie, tvSerie }) {
 
             {tvSerie && (
                 <div className='movieCard' key={tvSerie.id}>
+                    <img src={`https://image.tmdb.org/t/p/w342${tvSerie.poster_path}`} alt={tvSerie.title} />
                     <h1>Titolo: {tvSerie.name}</h1>
                     <h2>Titolo originale: {tvSerie.original_name}</h2>
                     <img
