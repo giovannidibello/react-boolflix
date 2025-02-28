@@ -10,7 +10,7 @@ import MovieCard from "./MovieCard";
 export default function MoviesList() {
 
     // destrutturiamo l'esecuzione del useContext (oggetto di ritorno)
-    const { movies = [], tvSeries = [] } = useContext(GlobalContext);
+    const { movies, tvSeries } = useContext(GlobalContext);
 
     return (
         <>
