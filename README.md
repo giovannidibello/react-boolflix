@@ -13,7 +13,7 @@ L'app consente agli utenti di cercare film e serie TV, visualizzare i risultati 
 
 ## 📸 Screenshot
 
-![Anteprima](./preview.png)
+![Anteprima](./public/preview.png)
 
 ## 📁 Struttura del Progetto
 
